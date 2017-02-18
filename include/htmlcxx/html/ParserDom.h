@@ -1,8 +1,8 @@
 #ifndef __HTML_PARSER_DOM_H__
 #define __HTML_PARSER_DOM_H__
 
-#include "ParserSax.h"
-#include "tree.h"
+#include <htmlcxx/html/ParserSax.h>
+#include <htmlcxx/html/tree.h>
 
 namespace htmlcxx
 {

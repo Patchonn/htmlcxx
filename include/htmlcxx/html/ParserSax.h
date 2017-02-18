@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "Node.h"
+#include <htmlcxx/html/Node.h>
 
 namespace htmlcxx
 {
@@ -60,6 +60,6 @@ namespace htmlcxx
 	}//namespace HTML
 }//namespace htmlcxx
 
-#include "ParserSax.tcc"
+#include <htmlcxx/html/ParserSax.tcc>
 
 #endif

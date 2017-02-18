@@ -1,4 +1,4 @@
-#include "Uri.h"
+#include <htmlcxx/html/Uri.h>
 
 #include "wincstring.h"
 #include <sstream>

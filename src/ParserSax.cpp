@@ -1,4 +1,4 @@
-#include "ParserSax.h"
+#include <htmlcxx/html/ParserSax.h>
 
 void htmlcxx::HTML::ParserSax::parse(const std::string &html)
 {

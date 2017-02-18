@@ -1,8 +1,8 @@
 #ifndef __HTML_UTILS_H__
 #define __HTML_UTILS_H__
 
-#include "tree.h"
-#include "Node.h"
+#include <htmlcxx/html/tree.h>
+#include <htmlcxx/html/Node.h>
 
 namespace htmlcxx {
 

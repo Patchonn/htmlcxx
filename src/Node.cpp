@@ -2,7 +2,7 @@
 #include <cctype>
 #include <algorithm>
 #include "wincstring.h"
-#include "Node.h"
+#include <htmlcxx/html/Node.h>
 #include "symbols.h"
 
 //#define DEBUG

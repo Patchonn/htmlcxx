@@ -23,7 +23,7 @@ namespace htmlcxx
 			std::string convert(const std::string &input);
 
 		private:
-			iconv_t mIconvDescriptor;;
+			iconv_t mIconvDescriptor;
 	};
 }
 

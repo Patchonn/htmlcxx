@@ -12,22 +12,12 @@ set(HCX_SRC
     ${PROJECT_SOURCE_DIR}/src/Node.cpp
     ${PROJECT_SOURCE_DIR}/src/ParserDom.cpp
     ${PROJECT_SOURCE_DIR}/src/ParserSax.cpp
-    ${PROJECT_SOURCE_DIR}/src/tests.cpp
     ${PROJECT_SOURCE_DIR}/src/Uri.cpp
-    ${PROJECT_SOURCE_DIR}/src/uriTests.cpp
     ${PROJECT_SOURCE_DIR}/src/utils.cpp
 )
-include_directories("${PROJECT_SOURCE_DIR}/src")
+include_directories("${PROJECT_SOURCE_DIR}/include")
 
 add_library(htmlcxx ${HCX_SRC})
-target_include_directories(htmlcxx PUBLIC "${PROJECT_SOURCE_DIR}/src")
-
-#install(TARGETS htmlcxx
-#    INCLUDES DESTINATION "include"
-#    ARCHIVE DESTINATION lib
-#    LIBRARY DESTINATION lib
-#    RUNTIME DESTINATION bin
-#)
-#install(DIRECTORY "include/" DESTINATION "include")
+target_include_directories(htmlcxx PUBLIC "${PROJECT_SOURCE_DIR}/include")
 
 

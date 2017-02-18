@@ -1,4 +1,4 @@
-#include "ParserDom.h"
+#include <htmlcxx/html/ParserDom.h>
 #include "wincstring.h"
 
 #include <iostream>

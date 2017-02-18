@@ -6,7 +6,7 @@
 
 //#define DEBUG
 //#include "debug.h"
-#include "symbols.h"
+#include <htmlcxx/html/symbols.h>
 
 static
 struct literal_tag {
