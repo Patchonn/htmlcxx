@@ -17,7 +17,24 @@ set(HCX_SRC
 )
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
-add_library(htmlcxx ${HCX_SRC})
+# leave OFF so it doens't cause problems with already existing libraries
+option(HCX_LIBRARY "Build static library (builds objects only by default)." OFF)
+if(HCX_LIBRARY)
+    add_library(htmlcxx ${HCX_SRC})
+    
+    # rules for installing
+    install(TARGETS dukp
+        INCLUDES DESTINATION "include"
+        ARCHIVE DESTINATION lib
+        LIBRARY DESTINATION lib
+        RUNTIME DESTINATION bin
+    )
+    install(DIRECTORY "include/" DESTINATION "include")
+    
+else(HCX_LIBRARY)
+    add_library(htmlcxx OBJECT ${HCX_SRC})
+endif(HCX_LIBRARY)
+
 target_include_directories(htmlcxx PUBLIC "${PROJECT_SOURCE_DIR}/include")
 
 
