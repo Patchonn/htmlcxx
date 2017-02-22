@@ -2,9 +2,14 @@
 #include <cctype>
 #include <cstring>
 #include <sstream>
+#include <vector>
 #include <htmlcxx/html/Uri.h>
 
 #include <htmlcxx/html/utils.h>
+
+extern "C"{
+#include "entities.h"
+}
 
 using namespace std;
 namespace htmlcxx {
@@ -540,6 +545,11 @@ namespace htmlcxx {
 			return ret;
 
 		}
+        
+        void unescape(std::string &str){
+            size_t len = decode_html_entities_utf8(&str[0], NULL);
+            str.erase(len);
+        }
 
 	}//namespace html
 }//namespace htmlcxx

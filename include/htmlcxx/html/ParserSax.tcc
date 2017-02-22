@@ -7,6 +7,7 @@
 //#define DEBUG
 //#include "debug.h"
 #include <htmlcxx/html/symbols.h>
+#include <htmlcxx/html/utils.h>
 
 static
 struct literal_tag {
@@ -258,6 +259,8 @@ void htmlcxx::HTML::ParserSax::parseContent(_Iterator b, _Iterator c)
 	//FIXME: set_tagname shouldn't be needed, but first I must check
 	//legacy code
 	std::string text(b, c);
+    size_t original_size = text.length();
+    unescape(text);
 	txt_node.tagName(text);
 	txt_node.text(text);
 	txt_node.offset(mCurrentOffset);
@@ -265,7 +268,7 @@ void htmlcxx::HTML::ParserSax::parseContent(_Iterator b, _Iterator c)
 	txt_node.isTag(false);
 	txt_node.isComment(false);
 
-	mCurrentOffset += txt_node.length();
+	mCurrentOffset += original_size;
 
 	// Call callback method
 	this->foundText(txt_node);

@@ -14,10 +14,11 @@ set(HCX_SRC
     ${PROJECT_SOURCE_DIR}/src/ParserSax.cpp
     ${PROJECT_SOURCE_DIR}/src/Uri.cpp
     ${PROJECT_SOURCE_DIR}/src/utils.cpp
+    ${PROJECT_SOURCE_DIR}/src/entities.c
 )
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
-# leave OFF so it doens't cause problems with already existing libraries
+# leave OFF so it doesn't cause problems with already existing libraries
 option(HCX_LIBRARY "Build static library (builds objects only by default)." OFF)
 if(HCX_LIBRARY)
     add_library(htmlcxx ${HCX_SRC})

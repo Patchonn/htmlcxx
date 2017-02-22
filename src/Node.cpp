@@ -3,7 +3,8 @@
 #include <algorithm>
 #include "wincstring.h"
 #include <htmlcxx/html/Node.h>
-#include "symbols.h"
+#include <htmlcxx/html/symbols.h>
+#include <htmlcxx/html/utils.h>
 
 //#define DEBUG
 #include "debug.h"
@@ -88,7 +89,8 @@ void Node::parseAttributes()
 			}
 
 //			fprintf(stderr, "%s = %s\n", key.c_str(), val.c_str());
-			mAttributes.insert(make_pair(key, val));
+            unescape(val);
+            mAttributes.insert(make_pair(key, val));
 		}
 		else
 		{
