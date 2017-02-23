@@ -16,7 +16,6 @@ set(HCX_SRC
     ${PROJECT_SOURCE_DIR}/src/utils.cpp
     ${PROJECT_SOURCE_DIR}/src/entities.c
 )
-include_directories("${PROJECT_SOURCE_DIR}/include")
 
 # leave OFF so it doesn't cause problems with already existing libraries
 option(HCX_LIBRARY "Build static library (builds objects only by default)." OFF)
@@ -34,8 +33,11 @@ if(HCX_LIBRARY)
     
 else(HCX_LIBRARY)
     add_library(htmlcxx OBJECT ${HCX_SRC})
+    set(HCX_OBJ $<TARGET_OBJECTS:htmlcxx> PARENT_SCOPE)
 endif(HCX_LIBRARY)
 
-target_include_directories(htmlcxx PUBLIC "${PROJECT_SOURCE_DIR}/include")
-
+set(HCX_INCLUDE "${PROJECT_SOURCE_DIR}/include")
+set(HCX_INCLUDE ${HCX_INCLUDE} PARENT_SCOPE)
+include_directories(${HCX_INCLUDE})
+target_include_directories(htmlcxx PUBLIC ${HCX_INCLUDE})
 
