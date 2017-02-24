@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 2.8.12)
 project(htmlcxx)
 
 # compiler options
-set(CMAKE_CXX_STANDARD 11)
 #add_compile_options(-Wall -pedantic)
 
 
@@ -40,4 +39,5 @@ set(HCX_INCLUDE "${PROJECT_SOURCE_DIR}/include")
 set(HCX_INCLUDE ${HCX_INCLUDE} PARENT_SCOPE)
 include_directories(${HCX_INCLUDE})
 target_include_directories(htmlcxx PUBLIC ${HCX_INCLUDE})
+set_property(TARGET htmlcxx PROPERTY CXX_STANDARD 11)
 
