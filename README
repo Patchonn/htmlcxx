@@ -1,2 +1,2 @@
 This is a fork of htmlcxx to make it able to compile easily on cygwin (at least)
-and to add a few more allowed tag and attribute name characters.
+and to add a bit more compatibility with today's html lack of standards.
